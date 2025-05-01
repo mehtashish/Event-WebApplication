@@ -1,0 +1,15 @@
+<h2>All Upcoming Events</h2>
+<a href="/register">Register</a> |
+<a href="/login">Login</a> |
+<a href="/create">Create Event</a> |
+<a href="/events">My Events</a>
+<ul>
+    <% events.forEach(event=> { %>
+        <li>
+            <%= event.title %> - <%= new Date(event.date).toLocaleString() %>
+                    <form action="/register-event/<%= event._id %>" method="POST">
+                        <button>Register</button>
+                    </form>
+        </li>
+        <% }) %>
+</ul>

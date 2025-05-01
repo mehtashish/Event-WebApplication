@@ -1,0 +1,12 @@
+<h2>My Registered Events</h2>
+<a href="/">Back to Home</a>
+<ul>
+    <% events.forEach(event=> { %>
+        <li>
+            <%= event.title %> - <%= new Date(event.date).toLocaleString() %>
+                    <form action="/cancel/<%= event._id %>" method="POST">
+                        <button>Cancel</button>
+                    </form>
+        </li>
+        <% }) %>
+</ul>
